@@ -3,8 +3,6 @@ import React from "react";
 function QuizJson() {
     const jsonContent = getJsonContent();
 
-    React.
-
     return(
         <div>
             <p>{jsonContent}</p>
