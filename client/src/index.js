@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import QuizJson from './QuizJson';
+import QuizQuesion from './QuizQuestion';
 
 ReactDOM.render(
   <React.StrictMode>
-    <QuizJson />
+    <QuizQuesion />
   </React.StrictMode>,
   document.getElementById('root')
 );
