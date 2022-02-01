@@ -3,36 +3,37 @@ import QuizQuesion from "./objects/QuizQuestion";
 
 function QuizQuestion(props) {
 
-    const [ quizQuestion, setQuizQuestion ] = useState( { questionText: 'Hello world!' });
-    
-    React.useEffect( () => {
-        let myQuestion = {};
+    // const [ quizQuestion, setQuizQuestion ] = useState( { questionText: 'Hello world!', answers: [ '1', '2', '3'] });
 
-        fetch('http://localhost:4000')
-            .then(results => results.json())
-            .then(data => {
+    // React.useEffect( () => {
+    //     let myQuestion = {};
+
+    //     fetch('http://localhost:4000')
+    //         .then(results => results.json())
+    //         .then(data => {
+
+    //             const fullQuiz = data.jillsquiz;
+    //             const historyTopic = fullQuiz[0];
+    //             const jsonQuestion = historyTopic.quizquestions[0];
     
-                const fullQuiz = data.jillsquiz;
-                const historyTopic = fullQuiz[0];
-    
-                const jsonQuestion = historyTopic.quizquestions[0];
-                console.log(jsonQuestion);
-    
-                myQuestion = new QuizQuesion(jsonQuestion.question, jsonQuestion.answers, jsonQuestion.correct_answer);
-                console.log(myQuestion);
-                setQuizQuestion(myQuestion);
-            });
-    }, []);
+    //             myQuestion = new QuizQuesion(jsonQuestion.question, jsonQuestion.answers, jsonQuestion.correct_answer);
+    //             setQuizQuestion(myQuestion);
+    //         });
+    // }, []);
 
     return(
         <div>
-            <p className="question">{quizQuestion.questionText}</p>
-            <ul>
-                <li>{quizQuestion.answers[0]}</li>
-                <li>{quizQuestion.answers[1]}</li>
-                <li>{quizQuestion.answers[2]}</li>
-            </ul>
-            <p>Correct answer is: {quizQuestion.correctAnswer}</p>
+            <p>{props.myQuestion.questionText}</p>
+            
+            <input type='radio' id="answer1" name="answer"></input>
+            <label for='answer1'>{props.myQuestion.answers[0]}</label>
+
+            <input type='radio' id="answer2" name="answer"></input>
+            <label for='answer2'>{props.myQuestion.answers[1]}</label>
+
+            <input type='radio' id="answer3" name="answer"></input>
+            <label for='answer3'>{props.myQuestion.answers[2]}</label>
+            <br />
         </div>
     );
 }

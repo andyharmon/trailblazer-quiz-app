@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import QuizQuesion from './QuizQuestion';
+import QuestionList from './QuestionList';
 
 ReactDOM.render(
   <React.StrictMode>
-    <QuizQuesion />
+    <QuestionList />
   </React.StrictMode>,
   document.getElementById('root')
 );
