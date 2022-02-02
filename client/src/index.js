@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import QuizQuesion from './QuizQuestion';
-import QuestionList from './QuestionList';
+import Home from './Home';
 
-ReactDOM.render(
+ReactDOM.render
+(
   <React.StrictMode>
-    <QuestionList />
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
