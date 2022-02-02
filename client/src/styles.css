@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    margin: 50;
+    padding: 50;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39,
+      auto;
+    transition: all 0.45s ease;
+  }
+
+  .card {
+    background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+    position: relative;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    max-height: 100%;
+    
+    
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .intro {
+    background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+    position: relative;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    max-height: 100%;
+  }
+
+  .intro:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .history {
+    background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);
+    position: relative;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    max-height: 100%;
+  }
+
+  .history:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .geography {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    position: relative;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    max-height: 100%;
+  }
+
+  .geography:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .flowers {
+    background: linear-gradient(135deg, #f6d364 0%, #fda085 100%);
+    position: relative;
+    padding: 15px;
+    margin: 10px;
+    width: 300px;
+    max-height: 100%;
+  }
+
+  .flowers:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  ul.topics {
+    list-style-type: none;
+  }
+  
+ 
