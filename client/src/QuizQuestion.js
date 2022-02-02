@@ -1,25 +1,6 @@
-import React, { useState } from "react";
-import QuizQuesion from "./objects/QuizQuestion";
+import React from "react";
 
 function QuizQuestion(props) {
-
-    // const [ quizQuestion, setQuizQuestion ] = useState( { questionText: 'Hello world!', answers: [ '1', '2', '3'] });
-
-    // React.useEffect( () => {
-    //     let myQuestion = {};
-
-    //     fetch('http://localhost:4000')
-    //         .then(results => results.json())
-    //         .then(data => {
-
-    //             const fullQuiz = data.jillsquiz;
-    //             const historyTopic = fullQuiz[0];
-    //             const jsonQuestion = historyTopic.quizquestions[0];
-    
-    //             myQuestion = new QuizQuesion(jsonQuestion.question, jsonQuestion.answers, jsonQuestion.correct_answer);
-    //             setQuizQuestion(myQuestion);
-    //         });
-    // }, []);
 
     return(
         <div>
