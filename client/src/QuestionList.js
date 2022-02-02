@@ -8,52 +8,65 @@ function QuestionList(props) {
 
     React.useEffect( () => {
         let myQuestionList = [];
-
-        fetch('http://localhost:4000')
-        .then(results => results.json())
-        .then(data => {
-
-            const fullQuiz = data.jillsquiz;
-            let topicNumber = -1;
-
-            switch (props.currentTopic) {
-                case 'History':
-                    topicNumber = 0;
-                    break;
-
-                case 'Geography':
-                    topicNumber = 1;
-                    break;
+        if (props.currentTopic !== 'none') {
+            fetch('http://localhost:4000')
+            .then(results => results.json())
+            .then(data => {
+    
+                const fullQuiz = data.jillsquiz;
+                let topicNumber = -1;
+    
+                switch (props.currentTopic) {
+                    case 'History':
+                        topicNumber = 0;
+                        break;
+    
+                    case 'Geography':
+                        topicNumber = 1;
+                        break;
+                    
+                    case 'Flowers':
+                        topicNumber = 2;
+                        break;
                 
-                case 'Flowers':
-                    topicNumber = 2;
-                    break;
-            
-                default:
-                    break;
-            }
-
-            const chosenTopic = fullQuiz[topicNumber];
-
-            const topicQuestions = chosenTopic.quizquestions;
-
-            topicQuestions.map((data) => {
-                 return myQuestionList.push(new QuizQuesion(data.question, data.answers, data.correct_answer));
-            });
-
-            setQuestions(myQuestionList);
-        });
+                    default:
+                        break;
+                }
+    
+                const chosenTopic = fullQuiz[topicNumber];
+    
+                const topicQuestions = chosenTopic.quizquestions;
+    
+                topicQuestions.map((data) => {
+                     return myQuestionList.push(new QuizQuesion(data.question, data.answers, data.correct_answer));
+                });
+    
+                setQuestions(myQuestionList);
+            });    
+        }
     }, [props.currentTopic]);
 
-    return(
-        <div>
-            <b>Questions!</b>
-            <QuizQuestion myQuestion={questions[0]} questionNumber={1} />
-            <QuizQuestion myQuestion={questions[1]} questionNumber={2} />
-            <br />
-            <button>These are all of my answers</button>
-        </div>
-    );
+    if (props.currentTopic !== 'none') {
+        return(
+            <div>
+                
+                <b>Questions for {props.currentTopic}</b>
+                <QuizQuestion myQuestion={questions[0]} questionNumber={1} />
+                <QuizQuestion myQuestion={questions[1]} questionNumber={2} />
+                <br />
+                <button>Submit</button>
+            </div>
+        );
+    }
+    else{
+        return (
+            <div>
+                <p>Select a topic to start the quiz.</p>
+            </div>
+        )
+    }
+
+
 
 }
 

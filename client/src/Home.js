@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import QuestionList from "./QuestionList";
 
 function Home(props) {
-    const [ currentTopic, setCurrentTopic ] = useState('History');
+    const [ currentTopic, setCurrentTopic ] = useState('none');
 
     return(
         <div>
