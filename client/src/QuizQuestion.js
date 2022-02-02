@@ -1,22 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 
 function QuizQuestion(props) {
 
-    return(
-        <div>
-            <p>Question {props.questionNumber}: {props.myQuestion.questionText}</p>
-            
-            <input type='radio' id={props.questionNumber + 'answer1'} name={props.questionNumber + 'answer'}></input>
-            <label htmlFor={props.questionNumber + 'answer1'}>{props.myQuestion.answers[0]}</label>
+    const [selectedOption, setSelectedOption] = useState(-1);
+    const [showAnswer, setShowAnswer] = useState(false);
 
-            <input type='radio' id={props.questionNumber + 'answer2'} name={props.questionNumber + 'answer'}></input>
-            <label htmlFor={props.questionNumber + 'answer2'}>{props.myQuestion.answers[1]}</label>
+    React.useEffect( () =>{
+        if (selectedOption > -1) {
+            setShowAnswer(true);
+        }
+    }, [selectedOption])
 
-            <input type='radio' id={props.questionNumber + 'answer3'}name={props.questionNumber + 'answer'}></input>
-            <label htmlFor={props.questionNumber + 'answer3'}>{props.myQuestion.answers[2]}</label>
-            <br />
-        </div>
-    );
+    if (showAnswer) {
+        return(
+            <div>
+                <p>Question {props.questionNumber}: {props.myQuestion.questionText}</p>
+                
+                <input type='radio' id={props.questionNumber + 'answer1'} name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(1)} disabled></input>
+                <label htmlFor={props.questionNumber + 'answer1'}>{props.myQuestion.answers[0]}</label>
+    
+                <input type='radio' id={props.questionNumber + 'answer2'} name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(2)} disabled></input>
+                <label htmlFor={props.questionNumber + 'answer2'}>{props.myQuestion.answers[1]}</label>
+    
+                <input type='radio' id={props.questionNumber + 'answer3'}name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(3)} disabled></input>
+                <label htmlFor={props.questionNumber + 'answer3'}>{props.myQuestion.answers[2]}</label>
+                <br />
+                
+                {selectedOption === props.myQuestion.correctAnswer? <p className="correct">That's correct!</p> : <p className="incorrect">That's not correct!</p>}
+            </div>
+        );
+    } else {
+        return(
+            <div>
+                <p>Question {props.questionNumber}: {props.myQuestion.questionText}</p>
+                
+                <input type='radio' id={props.questionNumber + 'answer1'} name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(1)}></input>
+                <label htmlFor={props.questionNumber + 'answer1'}>{props.myQuestion.answers[0]}</label>
+    
+                <input type='radio' id={props.questionNumber + 'answer2'} name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(2)}></input>
+                <label htmlFor={props.questionNumber + 'answer2'}>{props.myQuestion.answers[1]}</label>
+    
+                <input type='radio' id={props.questionNumber + 'answer3'}name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(3)}></input>
+                <label htmlFor={props.questionNumber + 'answer3'}>{props.myQuestion.answers[2]}</label>
+                <br />
+            </div>
+        );
+    }
 }
 
 export default QuizQuestion;
