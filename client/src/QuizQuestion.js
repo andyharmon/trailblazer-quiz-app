@@ -23,16 +23,16 @@ function QuizQuestion(props) {
 
     return(
         <div>
-            <p>{props.myQuestion.questionText}</p>
+            <p>Question {props.questionNumber}: {props.myQuestion.questionText}</p>
             
-            <input type='radio' id="answer1" name="answer"></input>
-            <label for='answer1'>{props.myQuestion.answers[0]}</label>
+            <input type='radio' id={props.questionNumber + 'answer1'} name={props.questionNumber + 'answer'}></input>
+            <label for={props.questionNumber + 'answer1'}>{props.myQuestion.answers[0]}</label>
 
-            <input type='radio' id="answer2" name="answer"></input>
-            <label for='answer2'>{props.myQuestion.answers[1]}</label>
+            <input type='radio' id={props.questionNumber + 'answer2'} name={props.questionNumber + 'answer'}></input>
+            <label for={props.questionNumber + 'answer2'}>{props.myQuestion.answers[1]}</label>
 
-            <input type='radio' id="answer3" name="answer"></input>
-            <label for='answer3'>{props.myQuestion.answers[2]}</label>
+            <input type='radio' id={props.questionNumber + 'answer3'}name={props.questionNumber + 'answer'}></input>
+            <label for={props.questionNumber + 'answer3'}>{props.myQuestion.answers[2]}</label>
             <br />
         </div>
     );
