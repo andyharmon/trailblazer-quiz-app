@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import QuizQuesion from "./objects/QuizQuestion";
 import QuizQuestion from "./QuizQuestion";
+import "./styles.css";
 
 function QuestionList(props) {
 
@@ -48,19 +49,19 @@ function QuestionList(props) {
 
     if (props.currentTopic !== 'none') {
         return(
-            <div>
+            <div className="card">
                 
                 <b>Questions for {props.currentTopic}</b>
                 <QuizQuestion myQuestion={questions[0]} questionNumber={1} />
                 <QuizQuestion myQuestion={questions[1]} questionNumber={2} />
                 <br />
-                <button>Submit</button>
+                <button className="submitbutton"> Submit</button>
             </div>
         );
     }
     else{
         return (
-            <div>
+            <div className="intro">
                 <p>Select a topic to start the quiz.</p>
             </div>
         )
