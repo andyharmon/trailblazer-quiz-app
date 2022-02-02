@@ -55,7 +55,10 @@ function QuestionList(props) {
                 <QuizQuestion myQuestion={questions[0]} questionNumber={1} />
                 <QuizQuestion myQuestion={questions[1]} questionNumber={2} />
                 <br />
-                <button className="submitbutton"> Submit</button>
+
+
+                <button>Get your scores!</button>
+
             </div>
         );
     }
