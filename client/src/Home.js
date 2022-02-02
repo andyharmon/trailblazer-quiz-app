@@ -8,9 +8,9 @@ function Home(props) {
         <div>
             <nav>
                 <ul>
-                    <li><button>History</button></li>
-                    <li><button>Geography</button></li>
-                    <li><button>Flowers</button></li>
+                    <li><button onClick={() => setCurrentTopic('History')}>History</button></li>
+                    <li><button onClick={() => setCurrentTopic('Geography')}>Geography</button></li>
+                    <li><button onClick={() => setCurrentTopic('Flowers')}>Flowers</button></li>
                 </ul>
             </nav>
 

@@ -41,7 +41,6 @@ function QuestionList(props) {
                  return myQuestionList.push(new QuizQuesion(data.question, data.answers, data.correct_answer));
             });
 
-            console.log(myQuestionList);
             setQuestions(myQuestionList);
         });
     }, [props.currentTopic]);
