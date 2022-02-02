@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import QuestionList from "./QuestionList";
 
 function Home(props) {
-    const [ currentTopic, setCurrentTopic ] = useState('none');
+    const [ currentTopic, setCurrentTopic ] = useState('History');
 
     return(
         <div>
@@ -14,7 +14,7 @@ function Home(props) {
                 </ul>
             </nav>
 
-            <QuestionList />
+            <QuestionList currentTopic={currentTopic} />
         </div>
     );
 }

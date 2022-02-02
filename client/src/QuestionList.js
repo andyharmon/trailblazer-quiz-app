@@ -14,9 +14,28 @@ function QuestionList(props) {
         .then(data => {
 
             const fullQuiz = data.jillsquiz;
-            const historyTopic = fullQuiz[0];
+            let topicNumber = -1;
 
-            const topicQuestions = historyTopic.quizquestions;
+            switch (props.currentTopic) {
+                case 'History':
+                    topicNumber = 0;
+                    break;
+
+                case 'Geography':
+                    topicNumber = 1;
+                    break;
+                
+                case 'Flowers':
+                    topicNumber = 2;
+                    break;
+            
+                default:
+                    break;
+            }
+
+            const chosenTopic = fullQuiz[topicNumber];
+
+            const topicQuestions = chosenTopic.quizquestions;
 
             topicQuestions.map((data) => {
                  return myQuestionList.push(new QuizQuesion(data.question, data.answers, data.correct_answer));
@@ -25,7 +44,7 @@ function QuestionList(props) {
             console.log(myQuestionList);
             setQuestions(myQuestionList);
         });
-    }, []);
+    }, [props.currentTopic]);
 
     return(
         <div>
