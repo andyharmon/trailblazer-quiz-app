@@ -16,13 +16,13 @@ function QuizQuestion(props) {
             <div>
                 <p>Question {props.questionNumber}: {props.myQuestion.questionText}</p>
                 
-                <input type='radio' id={props.questionNumber + 'answer1'} name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(1)}></input>
+                <input type='radio' id={props.questionNumber + 'answer1'} name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(1)} disabled></input>
                 <label htmlFor={props.questionNumber + 'answer1'}>{props.myQuestion.answers[0]}</label>
     
-                <input type='radio' id={props.questionNumber + 'answer2'} name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(2)}></input>
+                <input type='radio' id={props.questionNumber + 'answer2'} name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(2)} disabled></input>
                 <label htmlFor={props.questionNumber + 'answer2'}>{props.myQuestion.answers[1]}</label>
     
-                <input type='radio' id={props.questionNumber + 'answer3'}name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(3)}></input>
+                <input type='radio' id={props.questionNumber + 'answer3'}name={props.questionNumber + 'answer'} onClick={() => setSelectedOption(3)} disabled></input>
                 <label htmlFor={props.questionNumber + 'answer3'}>{props.myQuestion.answers[2]}</label>
                 <br />
                 
