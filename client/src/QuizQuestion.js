@@ -26,7 +26,7 @@ function QuizQuestion(props) {
                 <label htmlFor={props.questionNumber + 'answer3'}>{props.myQuestion.answers[2]}</label>
                 <br />
                 
-                {selectedOption === props.myQuestion.correctAnswer? <p>That's right</p> : <p>That's not right!</p>}
+                {selectedOption === props.myQuestion.correctAnswer? <p className="correct">That's correct!</p> : <p className="incorrect">That's not correct!</p>}
             </div>
         );
     } else {
