@@ -56,9 +56,6 @@ function QuestionList(props) {
                 <QuizQuestion myQuestion={questions[1]} questionNumber={2} />
                 <br />
 
-
-                <button>Get your scores!</button>
-
             </div>
         );
     }
